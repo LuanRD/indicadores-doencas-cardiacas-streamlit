@@ -43,24 +43,18 @@ def predict_disease(inputs):
 def main():
     st.title('Predição de Doenças Cardíacas')
 
-    Altura = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 2.10)
-    Peso = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 100.00)
-
-
-    BMI = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 100.00)
+    Sex = st.radio("Qual o seu gênero de nascimento?", ("Masculino", "Feminino"))
+    Race = st.radio("Selecione sua cor/etnia:", ("Indígena", "Asiático", "Preto", "Pardo", "Branco", "Outro"))
+    AgeCategory = st.radio("Selecione sua faixa etária:", ("18-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80 or older"))
+    Altura = st.number_input("Insira a sua altura (m)", 0.01, 2.10)
+    Peso = st.number_input("Insira o seu peso (kg)", 0.01, 300.00)
+    BMI = Peso/(Altura**2)
     Smoking = st.radio("Você já fumou pelo menos 100 cigarros durante sua vida?", ("Não", "Sim"))
-    AlcoholDrinking = st.radio(
-        "Você consome álcool muito frequentemente? [Masculino - mais de 14 drinks/semana / Feminino - mais de 7 drinks/semana]", ("Não", "Sim"))
-    Stroke = st.radio("Já teve um derrame?", ("Não", "Sim"))
+    AlcoholDrinking = st.radio("Você consome álcool muito frequentemente? [Masculino - mais de 14 drinks/semana / Feminino - mais de 7 drinks/semana]", ("Não", "Sim"))
     PhysicalHealth = st.number_input("Considerando os últimos 30 dias, em quantos deles sua saúde física não esteve boa?", 0, 30)
     MentalHealth = st.number_input("Considerando os últimos 30 dias, em quantos deles sua saúde mental não esteve boa?", 0, 30)
     DiffWalking = st.radio("Você tem grande dificuldade para andar ou subir escadas?", ("Não", "Sim"))
-    Sex = st.radio("Qual o seu gênero de nascimento?", ("Masculino", "Feminino"))
-    AgeCategory = st.radio("Selecione sua faixa etária:", (
-        "18-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79",
-        "80 or older"))
-    Race = st.radio("Selecione sua cor/etnia:",
-                    ("Indígena", "Asiático", "Preto", "Pardo", "Branco", "Outro"))
+    Stroke = st.radio("Já teve um derrame?", ("Não", "Sim"))   
     Diabetic = st.radio("Você tem diabetes?", ("Não", "Pré-diabetes", "Sim", "Sim (durante a gravidez)"))
     PhysicalActivity = st.radio(
         "Nos últimos 30 dias, você praticou alguma atividade física (excetuando seu trabalho)?",
