@@ -28,7 +28,7 @@ def predict_disease(inputs):
 
     df['Sex'] = df['Sex'].map({'Masculino': 'Male', 'Feminino': 'Female'})
     df['Diabetic'] = df['Diabetic'].map({'Não': 'No', 'Sim': 'Yes', 'Pré-diabetes': 'No, borderline diabetes', 'Sim (durante a gravidez)': 'Yes (during pregnancy)'})
-    df['Race'] = df['Race'].map({'Branco': 'White', 'Preto': 'Black', 'Asiático': 'Asian', 'Indígena': 'American Indian/Alaskan Native', 'Hispânico': 'Pardo', 'Outro': 'Other'})
+    df['Race'] = df['Race'].map({'Branco': 'White', 'Preto': 'Black', 'Asiático': 'Asian', 'Indígena': 'American Indian/Alaskan Native', 'Pardo': 'Hispanic', 'Outro': 'Other'})
     df['GenHealth'] = df['GenHealth'].map({'Muito boa': 'Very good', 'Boa': 'Good', 'Regular': 'Fair', 'Ruim': 'Poor', 'Excelente': 'Excellent'})
 
     prediction = pipeline.predict(df)
