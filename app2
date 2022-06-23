@@ -43,7 +43,9 @@ def predict_disease(inputs):
 def main():
     st.title('Predição de Doenças Cardíacas')
 
-    st.subheader('Esse aplicativo foi criado baseado nos dados fornecidos pelo CDC americano em uma pesquisa anual. A partir desses dados, foi criado um modelo de Machine Learning que buscou prever a saúde cardíaca das pessoas à partir de informações pessoais. Esse projeto não tem o intuito de possuir cunho científico.', anchor=None)
+    Altura = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 2.10)
+    Peso = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 100.00)
+
 
     BMI = st.number_input("Índice de Massa Corporal (IMC) (peso/((altura)^2))", 0.00, 100.00)
     Smoking = st.radio("Você já fumou pelo menos 100 cigarros durante sua vida?", ("Não", "Sim"))
