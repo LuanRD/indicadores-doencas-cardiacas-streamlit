@@ -57,7 +57,7 @@ def main():
         "80 or older"))
     Race = st.radio("Selecione sua cor/etnia:",
                     ("Indígena", "Asiático", "Preto", "Pardo", "Branco", "Outro"))
-    Diabetic = st.radio("Do you have diabetes?", ("Não", "Pré-diabetes", "Sim", "Sim (durante a gravidez)"))
+    Diabetic = st.radio("Você tem diabetes?", ("Não", "Pré-diabetes", "Sim", "Sim (durante a gravidez)"))
     PhysicalActivity = st.radio(
         "Nos últimos 30 dias, você praticou alguma atividade física (excetuando seu trabalho)?",
         ("Não", "Sim"))
